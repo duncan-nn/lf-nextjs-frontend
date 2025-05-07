@@ -25,6 +25,15 @@ const Add = ({
     product_options: ProductOption[];
 }) => {
   const [quantity, setQuantity] = useState(1);
+  const [product, setProduct] = useState({
+    id: product_id,
+    name: name,
+    price: Number(price),
+    stock_status: stock_status,
+    image: image_src,
+    product_options: product_options,
+    quantity: quantity
+  });
   const {
     addItem: addToCart,
   } = useCart()
@@ -42,15 +51,10 @@ const Add = ({
   };
 
   const handleAddToCart = () => {
-    let product = {
-        id: product_id,
-        name: name,
-        price: Number(price),
-        stock_status: stock_status,
-        image: image_src,
-        product_options: product_options,
-        quantity: quantity
-    }
+    setProduct(prev => ({
+      ...prev,
+      quantity: quantity,
+    }));
     addToCart(product)
   };
 
