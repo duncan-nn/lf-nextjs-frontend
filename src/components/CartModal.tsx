@@ -5,10 +5,7 @@ import { useCart } from '@/hooks/use-cart'
 
 const CartModal = () => {
   const {
-    isOpen,
-    setIsOpen,
     items: cartItems,
-    updateQuantity,
     removeItem: removeFromCart,
     cartTotal,
   } = useCart()

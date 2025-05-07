@@ -26,13 +26,7 @@ const Add = ({
 }) => {
   const [quantity, setQuantity] = useState(1);
   const {
-    isOpen,
-    setIsOpen,
     addItem: addToCart,
-    items: cartItems,
-    updateQuantity,
-    removeItem: removeFromCart,
-    cartTotal,
   } = useCart()
 
   // // TEMPORARY
@@ -48,7 +42,7 @@ const Add = ({
   };
 
   const handleAddToCart = () => {
-    var product = {
+    let product = {
         id: product_id,
         name: name,
         price: Number(price),

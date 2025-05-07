@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import CartModal from './CartModal';
 import { useCart } from '@/hooks/use-cart'

@@ -3,14 +3,8 @@ import Add from "@/components/Add";
 import CustomizeProducts from "@/components/CustomizeProducts";
 import ProductImages from "@/components/ProductImages";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
 import DOMPurify from "isomorphic-dompurify";
 
-
-// type ProductOptions = {
-//   name: string;
-//   value: string;
-// };
 
 const SinglePage = async ({ params }: { params: { slug: string } }) => {
 
@@ -19,9 +13,6 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
   if (!product) {
     return notFound();
   }
-
-
-  console.log("PRODUCT: " + JSON.stringify(product));
 
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row lg:justify-center gap-16">
