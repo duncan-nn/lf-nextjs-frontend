@@ -26,7 +26,6 @@ export interface Product {
     total_sales: number;
     virtual: boolean;
     downloadable: boolean;
-    downloads: any[];
     download_limit: number;
     download_expiry: number;
     external_url: string;
@@ -86,9 +85,7 @@ export interface Product {
       variation: boolean;
       options: string[];
     }[];
-    default_attributes: any[];
     variations: number[];
-    grouped_products: any[];
     menu_order: number;
     price_html: string;
     related_ids: number[];

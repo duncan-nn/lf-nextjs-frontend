@@ -4,8 +4,19 @@ import { Product } from "@/utils/models";
 import Image from "next/image";
 import { useState } from "react";
 
+export interface ProductImage {
+  id: number;
+  date_created: string;
+  date_created_gmt: string;
+  date_modified: string;
+  date_modified_gmt: string;
+  src: string;
+  name: string;
+  alt: string;
+}
 
-const ProductImages = ({ items }: { items: Product["images"] }) => {
+
+const ProductImages = ({ items }: { items: ProductImage[] }) => {
   const [index, setIndex] = useState(0);
 
   return (
@@ -20,7 +31,7 @@ const ProductImages = ({ items }: { items: Product["images"] }) => {
         />
       </div>
       <div className="flex gap-4 mt-2">
-        {items.map((item:any, i:number) => (
+        {items.map((item:ProductImage, i:number) => (
           <div
             className="w-1/4 h-40 relative gap-4 mt-8 cursor-pointer"
             key={item.id}
