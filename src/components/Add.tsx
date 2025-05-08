@@ -24,6 +24,7 @@ const Add = ({
     image_src: string;
     product_options: ProductOption[];
 }) => {
+
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState({
     id: product_id,
@@ -34,9 +35,7 @@ const Add = ({
     product_options: product_options,
     quantity: quantity
   });
-  const {
-    addItem: addToCart,
-  } = useCart()
+  const {addItem: addToCart,} = useCart()
 
   // // TEMPORARY
   const stockNumber = 4;
@@ -51,10 +50,7 @@ const Add = ({
   };
 
   const handleAddToCart = () => {
-    setProduct(prev => ({
-      ...prev,
-      quantity: quantity,
-    }));
+    setProduct(prev => ({...prev,quantity: quantity,}));
     addToCart(product)
   };
 

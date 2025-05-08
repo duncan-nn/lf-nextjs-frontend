@@ -1,6 +1,5 @@
 "use client";
 
-import { Product } from "@/utils/models";
 import Image from "next/image";
 import { useState } from "react";
 
