@@ -20,7 +20,7 @@ interface CartItem {
 
 interface CartContextType {
   items: CartItem[]
-  addItem: (product: any) => void
+  addItem: (product: CartItem) => void
   removeItem: (productId: string) => void
   updateQuantity: (productId: string, quantity: number) => void
   clearCart: () => void
@@ -35,7 +35,7 @@ const CartProvider = ({ children }: Props) => {
   const [items, setItems] = useState<CartItem[]>([])
   const [isOpen, setIsOpen] = useState(false)
 
-  const addItem = useCallback((product: any) => {
+  const addItem = useCallback((product: CartItem) => {
     setItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id)
 

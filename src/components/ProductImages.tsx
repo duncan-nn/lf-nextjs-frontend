@@ -1,10 +1,11 @@
 "use client";
 
+import { Product } from "@/utils/models";
 import Image from "next/image";
 import { useState } from "react";
 
 
-const ProductImages = ({ items }: { items: any }) => {
+const ProductImages = ({ items }: { items: Product["images"] }) => {
   const [index, setIndex] = useState(0);
 
   return (

@@ -1,5 +1,6 @@
 'use server'
 
+import { Product } from '@/utils/models';
 import axios from 'axios';
 
 
@@ -15,5 +16,5 @@ export const getProducts = async () => {
 
 export const getProduct = async (slug: string) => {
   const products = await getProducts()
-  return products.find((p: any) => p.slug === slug);
+  return products.find((p: Product) => p.slug === slug);
 }

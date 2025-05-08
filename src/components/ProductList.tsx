@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getProducts } from "@/actions/woocommerce";
+import { Product } from "@/utils/models";
 // import Pagination from "./Pagination";
 
 const ProductList = async () => {
@@ -10,7 +11,7 @@ const products = await getProducts()
 
   return (
     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
-      {products.length > 0 && products.map((product: any) => (
+      {products.length > 0 && products.map((product: Product) => (
         <Link
           href={"/product/" + product.slug}
           key={product.id}
