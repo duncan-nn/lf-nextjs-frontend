@@ -5,15 +5,14 @@ import ProductImages from "@/components/ProductImages";
 import { notFound } from "next/navigation";
 import DOMPurify from "isomorphic-dompurify";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-const SinglePage = async ({ params }: PageProps) => {
-  // const { slug } = params;
 
-  const product = await getProduct(params.slug)
+const SinglePage = async ({ params, }: {
+  params: Promise<{slug: string}>;
+}) => {
+  const slug = (await params).slug;
+
+
+  const product = await getProduct(slug)
 
   if (!product) {
     return notFound();
