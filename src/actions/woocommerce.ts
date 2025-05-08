@@ -3,6 +3,11 @@
 import { Product } from '@/utils/models';
 import axios from 'axios';
 
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
 
 export const getProducts = async () => {
   try {
